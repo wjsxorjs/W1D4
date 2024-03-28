@@ -36,8 +36,8 @@ public class VendingMachineEx7 {
 
 	public void stockBvgs(String bvgNm, int bvgPrc, int lstIdx) {
 		BeverageListEx7 bvg1 = new BeverageListEx7();
-		bvg1.name = bvgNm;
-		bvg1.price = bvgPrc;
+		bvg1.setName(bvgNm);
+		bvg1.setPrice(bvgPrc);
 		bvgLst[lstIdx] = bvg1;
 	}
 	
