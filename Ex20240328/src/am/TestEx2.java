@@ -3,8 +3,8 @@ package am;
 public class TestEx2 { // 클래스명은 이용자를 위해서라도 의미부여가 필요하다.
 
 	// 속성 (변수/상수)
-	int age; // 나이를 저장하는 변수 	 	| 초기값: 0
-	String name; // 이름을 저장하는 변수 	| 초기값: null < 멤버변수 (선언된 영역[클래스]에서 모두 사용가능하다)
+	private int age; // 나이를 저장하는 변수 	 	| 초기값: 0
+	private String name; // 이름을 저장하는 변수 	| 초기값: null < 멤버변수 (선언된 영역[클래스]에서 모두 사용가능하다)
 	
 	// 동작 (함수 또는 메서드)
 	
@@ -23,8 +23,18 @@ public class TestEx2 { // 클래스명은 이용자를 위해서라도 의미부
 	//		  age라는 멤버변수에 저장하는 동작
 	public void setAge(int newAge /*인자는 지역변수로 해당 영역에서만 사용할 수 있다.*/) {
 		age = newAge;
-	}
+	} // 멤버함수(멤버메소드)
 		
+	
+	public int getAge() {
+		return age;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	
 		
 	
 	public static void main(String[] args) {
@@ -32,7 +42,7 @@ public class TestEx2 { // 클래스명은 이용자를 위해서라도 의미부
 		TestEx2 te2_1 = new TestEx2();
 		te2_1.setAge(27);
 		te2_1.setName("JMG");
-		System.out.println(te2_1.age + " " + te2_1.name);
+		System.out.println(te2_1.age + " " + te2_1.name); //같은 클래스이기에 private 접근제한자를 가진 변수 사용가능
 
 
 		TestEx2 te2_2 = new TestEx2();
