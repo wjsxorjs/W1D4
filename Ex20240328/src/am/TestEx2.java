@@ -7,6 +7,8 @@ public class TestEx2 { // 클래스명은 이용자를 위해서라도 의미부
 	String name; // 이름을 저장하는 변수 	| 초기값: null < 멤버(?)변수
 	
 	// 동작 (함수 또는 메서드)
+	
+	
 	public void setName(String newName/*인자(매개변수)*/) {		// 접근제한자: public(누구나 접근가능) +
 																// 반환형: void(반환하지않음) +
 																// 함수명: setName(name을 set해준다는 의미)
@@ -15,21 +17,21 @@ public class TestEx2 { // 클래스명은 이용자를 위해서라도 의미부
 		// 		  name이라는 멤버변수에 저장하는 동작
 		name = newName;
 	}  
+	
+	// 나이를 저장하는 동작
+	// 나이를 newAge라는 변수로 받아서
+	//		  age라는 멤버변수에 저장하는 동작
+	public void setAge(int newAge) {
+		age = newAge;
+	}
 		
-	
-	
-	
-	
-	
-	
-	
-	
+		
 	
 	public static void main(String[] args) {
 		TestEx2 te2 = new TestEx2();
 		
-		te2.age=15;
-		te2.setName("JDI");
+		te2.setAge(15);
+		te2.setName("JMG");
 		System.out.println(te2.age + " " + te2.name);
 	}
 }
