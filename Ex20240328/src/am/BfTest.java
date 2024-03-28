@@ -8,14 +8,14 @@ public class BfTest {
 		return ntMn != -1;
 	}
 	
-	public void mineField() {
-		for(int i=0;i<10;i++) {
-			for(int j=0;j<10;j++) {
-				System.out.printf("%-3c", '#');
-			}
-			System.out.println();
-		}
-	}
+//	public void mineField() {
+//		for(int i=0;i<10;i++) {
+//			for(int j=0;j<10;j++) {
+//				System.out.printf("%-3c", '#');
+//			}
+//			System.out.println();
+//		}
+//	}
 	
 	public static void main(String[] args) {
 		// 배열은 객체로 인식된다.
@@ -103,6 +103,8 @@ public class BfTest {
 		int rowInd = 0;
 		int colInd = 0;
 		
+		int gssCnt = 0;
+		
 		while(true) { // 지뢰 "찾기"
 		
 			while(true) {
@@ -120,14 +122,18 @@ public class BfTest {
 			}
 		
 //		System.out.println("["+rowInd+"]  ["+colInd+"]");
-		
+			gssCnt++;
 			if(mnFld[rowInd][colInd] == -1) {
-				System.out.println("쾅!! 지뢰를 찾았다!");
+				System.out.printf("쾅!! %3d번 만에 지뢰를 찾았다!",gssCnt);
+				if(gssCnt == 1) {
+					System.out.printf("  < 운이 좋은건지 나쁜건지");
+				}
+				System.out.println();
 				System.out.println("지뢰의 위치: ");
 				for(int i=0; i<10; i++) {
 					for(int j=0; j<10; j++) {
 						if(mnFld[i][j]==-1) {
-							System.out.printf("행: %d  || 열: %d",i+1,j+1);
+							System.out.printf("행: %2d  || 열: %2d", i+1, j+1);
 							if(i == rowInd) {
 								System.out.print(" < 당신이 찾은 지뢰!");
 							}
