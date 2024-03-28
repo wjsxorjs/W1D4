@@ -8,7 +8,7 @@ public class BfTest {
 		return ntMn != -1;
 	}
 	
-	public static void mineField() {
+	public void mineField() {
 		for(int i=0;i<10;i++) {
 			for(int j=0;j<10;j++) {
 				System.out.printf("%-3c", '#');
