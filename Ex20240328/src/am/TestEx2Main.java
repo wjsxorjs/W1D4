@@ -20,8 +20,6 @@ public class TestEx2Main {
 		System.out.printf("te2's age: %d, te2's name: %s\n",te2.getAge(),te2.getName());
 		
 		
-		
-		
 //		BfTest mindField = new BfTest();
 //		
 //		mindField.mineField();
