@@ -12,10 +12,11 @@ public class StringEx1 {
 		String str1 = new String("JAVA programming");
 		String str2 = "JAVA pr0gr4mm1ng";
 		
-		// 문자열의 길이
+		// 문자열의 길이: length()
 		int strLen = str1.length();
 		System.out.printf("\"%s\"의 길이: %d\n", str1, strLen);
 		
+		// 특정위치의 문자 추출: charAt()
 		char ch0 = str1.charAt(0);  // str1이 기억하는 곳에 있는 문자열에서 0번지 값을 얻어내어 ch0에 저장하는 것
 		
 		System.out.printf("\"%s\"의 첫 글자: %c\n", str1, ch0);

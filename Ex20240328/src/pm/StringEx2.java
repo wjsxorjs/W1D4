@@ -7,8 +7,9 @@ public class StringEx2 {
 		String str1 = "Test";
 		String str2 = "123";
 		
+		// 문자열 이어붙이기: concat()
 		String str3 = str1.concat(str2); // str1에 str2에 덧붙힌 값을 반환해주어 str3에 저장한다.
-										 // 해당 c
+										 // 해당 concat은 명시적 선언과 같다.
 		
 		System.out.printf("\"%s\"(str1) + \"%s\"(str2): \"%s\"(str3)\n\n", str1, str2, str3);
 		
