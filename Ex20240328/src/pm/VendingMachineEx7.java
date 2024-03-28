@@ -24,33 +24,46 @@ public class VendingMachineEx7 {
 	    
 	 */
 	/*String[] bvrgNm		= {"레츠비", "사이다", "콜라", "웰치스"};*/
-	StringBuffer bvrgAvail;
-	BeverageListEx7 bvg1 = new BeverageListEx7();
-	BeverageListEx7 bvg2 = new BeverageListEx7();
-	BeverageListEx7 bvg3 = new BeverageListEx7();
-	BeverageListEx7 bvg4 = new BeverageListEx7();
 	
+	
+//	BeverageListEx7 bvg1 = new BeverageListEx7();
+//	BeverageListEx7 bvg2 = new BeverageListEx7();
+//	BeverageListEx7 bvg3 = new BeverageListEx7();
+//	BeverageListEx7 bvg4 = new BeverageListEx7();
+
+	StringBuffer bvrgAvail;
 	BeverageListEx7[] bvgLst = new BeverageListEx7[4];
 
+	public void stockBvgs(String bvgNm, int bvgPrc, int lstIdx) {
+		BeverageListEx7 bvg1 = new BeverageListEx7();
+		bvg1.name = bvgNm;
+		bvg1.price = bvgPrc;
+		bvgLst[lstIdx] = bvg1;
+	}
 	
 	public void setVending(){
 		bvrgAvail = new StringBuffer("");
 		
-		bvg1.name = "레츠비";
-		bvg1.price = 500;
-		bvgLst[0] = bvg1;
+		stockBvgs("레츠비", 500, 0);
+		stockBvgs("사이다", 700, 1);
+		stockBvgs("콜라", 700, 2);
+		stockBvgs("웰치스", 1000, 3);
 		
-		bvg2.name = "사이다";
-		bvg2.price = 700;
-		bvgLst[1] = bvg2;
-		
-		bvg3.name = "콜라";
-		bvg3.price = 700;
-		bvgLst[2] = bvg3;
-		
-		bvg4.name = "웰치스";
-		bvg4.price = 1000;
-		bvgLst[3] = bvg4;
+//		bvg1.name = "레츠비";
+//		bvg1.price = 500;
+//		bvgLst[0] = bvg1;	
+//		
+//		bvg2.name = "사이다";
+//		bvg2.price = 700;
+//		bvgLst[1] = bvg2;
+//		
+//		bvg3.name = "콜라";
+//		bvg3.price = 700;
+//		bvgLst[2] = bvg3;
+//		
+//		bvg4.name = "웰치스";
+//		bvg4.price = 1000;
+//		bvgLst[3] = bvg4;
 		
 		Scanner scanR = new Scanner(System.in);
 		System.out.print("금액: ");
@@ -67,10 +80,10 @@ public class VendingMachineEx7 {
 			}
 			System.out.println(bvrgAvail);
 			int inputChs = scanR.nextInt();
-			if(!(inputChs>0 && inputChs<maxChs)) {
+			if(!(inputChs>0 && inputChs<=maxChs)) {
 				System.out.println("...안녕히 가세요!");
 			}
-			System.out.printf("%s(%d원)을 구입하셨습니다.\n안녕히 가세요! 즐거운 하루 보내시고요!\n",bvgLst[inputChs-1].name,bvgLst[inputChs-1].price);
+			System.out.printf("%s(%d원)을 구입하셨습니다. 잔돈은 %d원입니다.\n안녕히 가세요! 즐거운 하루 보내시고요!\n",bvgLst[inputChs-1].name,bvgLst[inputChs-1].price,(inputFnd-bvgLst[inputChs-1].price));
 		}
 		
 	}
